@@ -16,6 +16,22 @@ import java.util.UUID;
 @Table(name = "users")
 public abstract class AppUser {
 
+    public AppUser() {}
+
+    public AppUser(
+            String name,
+            String email,
+            String phoneNumber,
+            String password,
+            UserType userType
+    ){
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.userType = userType;
+    }
+
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)

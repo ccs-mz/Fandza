@@ -1,15 +1,84 @@
 package com.fandza.ccs.Fandza.entities;
 
 
-import com.fandza.ccs.Fandza.config.uuid.UuidV7;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.fandza.ccs.Fandza.enums.DriverStatus;
+import com.fandza.ccs.Fandza.enums.UserType;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
 @Table(name = "driver")
 public class Driver extends AppUser {
+
+
+    protected Driver() {}
+
+
+    public Driver(
+            String name,
+            String email,
+            String phoneNumber,
+            String password,
+            String drivingLicenseNumber,
+            LocalDate licenseIssueDate
+    ){
+        super(name,email,phoneNumber,password, UserType.DRIVER);
+        this.drivingLicenseNumber = drivingLicenseNumber;
+        this.licenseIssueDate = licenseIssueDate;
+        this.status = DriverStatus.PENDING;
+
+    }
+
+
+    @Column(name = "driving_license_number",
+            nullable = false,
+            unique = true
+    )
+    private String drivingLicenseNumber;
+
+    @Column(
+            name = "license_issued_date",
+            nullable = false
+    )
+    @CreationTimestamp
+    private LocalDate licenseIssueDate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private DriverStatus status;
+
+
+    @Column(name = "status_uploaded_at")
+    private LocalDateTime statusUploadedAt;
+
+    @Column(
+            name = "status_reason"
+    )
+    private String statusReason;
+
+    @OneToOne(mappedBy = "driver", fetch = FetchType.LAZY)
+    private Vehicle vehicle;
+
+    @OneToOne(mappedBy = "driver")
+    private List<Assessment> assessments = new ArrayList<>();
+
+
+    @OneToMany(
+            mappedBy = "driver",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Document> documents = new ArrayList<>();
+
+
+
 
 
 
