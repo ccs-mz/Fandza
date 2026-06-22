@@ -22,4 +22,9 @@ public class Student extends   AppUser {
     @JoinColumn(name = "id_school")
     private School school;
 
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_address")
+    private Address address;
+
 }

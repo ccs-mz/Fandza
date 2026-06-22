@@ -23,13 +23,14 @@ public class School {
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
-    private UUID id;
+    private UUID idSchool;
 
     private String schoolName;
 
 
     @OneToMany(mappedBy = "school")
     private List<Student> students = new ArrayList<>();
+
 
 
 }

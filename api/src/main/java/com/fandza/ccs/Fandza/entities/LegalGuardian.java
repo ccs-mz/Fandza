@@ -14,13 +14,17 @@ import java.util.List;
 public class LegalGuardian  extends AppUser{
 
 
-    @OneToMany(mappedBy = "legalGuardian",cascade = CascadeType.PERSIST, orphanRemoval = false)
+    @OneToMany(
+            mappedBy = "legalGuardian",
+            cascade = CascadeType.PERSIST,
+            orphanRemoval = false
+    )
     private List<Student> students =  new ArrayList<>();
 
-    @OneToMany(mappedBy = "legalGuardian")
+/*    @OneToMany(mappedBy = "legalGuardian")
     private List<Reservation> reservations = new ArrayList<>();
 
     @OneToMany(mappedBy = "legalGuardian")
-    private List<Assessment> assessments = new ArrayList<>();
+    private List<Assessment> assessments = new ArrayList<>();*/
 
 }
