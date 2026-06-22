@@ -21,10 +21,10 @@ public class LegalGuardian  extends AppUser{
     )
     private List<Student> students =  new ArrayList<>();
 
-/*    @OneToMany(mappedBy = "legalGuardian")
+    @OneToMany(mappedBy = "legalGuardian")
     private List<Reservation> reservations = new ArrayList<>();
 
     @OneToMany(mappedBy = "legalGuardian")
-    private List<Assessment> assessments = new ArrayList<>();*/
+    private List<Assessment> assessments = new ArrayList<>();
 
 }
