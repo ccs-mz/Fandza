@@ -2,11 +2,14 @@ package com.fandza.ccs.Fandza.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "student")
+@Data
+@PrimaryKeyJoinColumn(name = "id_student")
 public class Student extends   AppUser {
 
 

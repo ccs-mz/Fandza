@@ -15,6 +15,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "driver")
+@PrimaryKeyJoinColumn(name = "id_driver")
 public class Driver extends AppUser {
 
 

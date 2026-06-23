@@ -2,10 +2,7 @@ package com.fandza.ccs.Fandza.entities;
 
 
 import com.fandza.ccs.Fandza.enums.UserType;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -14,6 +11,7 @@ import java.util.List;
 @Entity
 @Table(name ="legal_guardian")
 @Data
+@PrimaryKeyJoinColumn(name = "id_legal_guardian")
 public class LegalGuardian  extends AppUser{
 
 

@@ -6,7 +6,7 @@ CREATE TABLE driver(
                    CHECK ( status IN ('PENDING' , 'APPROVED' , 'REJECTED' , 'SUSPENDED')),
     status_uploaded_at TIMESTAMP,
     status_reason VARCHAR(255),
-    average_rating NUMERIC(3,2),
+    average_rating DOUBLE PRECISION,
     total_assessments INTEGER NOT NULL DEFAULT  0
 
 );
