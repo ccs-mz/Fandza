@@ -23,6 +23,7 @@ public class Reservation {
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
+    @Column(name = "id_reservation")
     private UUID idReservation;
 
     @Column(name = "date_reservation",

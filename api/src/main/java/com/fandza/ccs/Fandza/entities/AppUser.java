@@ -13,7 +13,7 @@ import java.util.UUID;
 @Entity
 @Inheritance(strategy =  InheritanceType.JOINED)
 @Data
-@Table(name = "users")
+@Table(name = "app_users")
 public abstract class AppUser {
 
     public AppUser() {}
@@ -35,6 +35,7 @@ public abstract class AppUser {
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
+    @Column(name = "id_user")
     private UUID idUser;
 
     @Column(
@@ -48,7 +49,7 @@ public abstract class AppUser {
     )
     private String email;
 
-
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Column(
@@ -56,6 +57,7 @@ public abstract class AppUser {
     )
     private String password;
 
+    @Column(name = "user_type")
     @Enumerated(EnumType.STRING)
     private UserType userType;
 

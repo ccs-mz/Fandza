@@ -9,6 +9,8 @@ import java.time.LocalDate;
 @Table(name = "student")
 public class Student extends   AppUser {
 
+
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
     private String grade;

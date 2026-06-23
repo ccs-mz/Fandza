@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name = "vehicle_routes")
+@Table(name = "vehicle_route")
 public class VehicleRoute {
 
     protected VehicleRoute() {}

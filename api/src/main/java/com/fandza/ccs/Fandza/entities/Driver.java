@@ -44,7 +44,7 @@ public class Driver extends AppUser {
     private String drivingLicenseNumber;
 
     @Column(
-            name = "license_issued_date",
+            name = "license_issue_date",
             nullable = false
     )
     @CreationTimestamp
@@ -63,10 +63,24 @@ public class Driver extends AppUser {
     )
     private String statusReason;
 
+
+    @Column(name = "average_rating")
+    private Double averageRating;
+
+
+    @Column(name = "total_assessments")
+    private Integer totalAssessments = 0;
+
+
+
     @OneToOne(mappedBy = "driver", fetch = FetchType.LAZY)
     private Vehicle vehicle;
 
-    @OneToOne(mappedBy = "driver")
+
+
+
+
+    @OneToMany(mappedBy = "driver")
     private List<Assessment> assessments = new ArrayList<>();
 
 

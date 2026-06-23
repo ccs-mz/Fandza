@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "routes")
+@Table(name = "route")
 @Data
 public class Route {
 
@@ -31,7 +31,8 @@ public class Route {
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
-    private UUID id;
+    @Column(name = "id_route")
+    private UUID idRoute;
 
     @Column(nullable = false, length = 550)
     private String description;
@@ -39,13 +40,15 @@ public class Route {
     @Column(nullable = false, name = "available_vacancies")
     private Integer availableVacancies;
 
+    @Version
+    private Integer version;
+
 
     @OneToMany(mappedBy = "route")
     private List<VehicleRoute>  vehicleRoutes = new ArrayList<>();
 
     @OneToMany(mappedBy = "route")
     private List<Reservation> reservations = new ArrayList<>();
-
 
 
 

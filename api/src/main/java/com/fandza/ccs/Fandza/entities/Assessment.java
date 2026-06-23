@@ -37,6 +37,7 @@ public class Assessment {
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
+    @Column(name = "id_assessment")
     private UUID idAssessment;
 
     private Integer classification;
@@ -53,7 +54,5 @@ public class Assessment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_driver")
     private Driver driver;
-
-
 
 }

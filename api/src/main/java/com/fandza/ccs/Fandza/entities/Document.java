@@ -62,11 +62,13 @@ public class Document {
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
+    @Column(name = "id_document")
     private UUID idDocument;
 
     @Enumerated(EnumType.STRING)
     @Column(
-            nullable = false
+            nullable = false,
+            name = "document_type"
     )
     private DocumentType documentType;
 

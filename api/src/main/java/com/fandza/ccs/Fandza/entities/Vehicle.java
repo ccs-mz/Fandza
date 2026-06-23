@@ -2,17 +2,23 @@ package com.fandza.ccs.Fandza.entities;
 
 import com.fandza.ccs.Fandza.config.uuid.UuidV7;
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Entity
+@Data
+@Table(name = "vehicle")
 public class Vehicle {
 
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
+    @Column(name = "id_vehicle",  nullable = false)
     private String idVehicle;
 
     @Column(
