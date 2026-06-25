@@ -19,7 +19,7 @@ import java.util.UUID;
 public class Document {
 
 
-    protected Document(){}
+    public Document(){}
 
     public Document(
             DocumentType documentType,

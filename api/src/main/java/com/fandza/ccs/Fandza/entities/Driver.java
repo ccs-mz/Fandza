@@ -81,7 +81,6 @@ public class Driver extends AppUser {
 
 
 
-
     @OneToMany(mappedBy = "driver")
     private List<Assessment> assessments = new ArrayList<>();
 
