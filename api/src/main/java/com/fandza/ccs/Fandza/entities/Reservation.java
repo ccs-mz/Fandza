@@ -32,6 +32,7 @@ public class Reservation {
     private LocalDateTime dateReservation;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private ReservationStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,8 +1,11 @@
 package com.fandza.ccs.Fandza.entities;
 
 
+import com.fandza.ccs.Fandza.config.uuid.UuidV7;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDate;
 
@@ -10,8 +13,13 @@ import java.time.LocalDate;
 @Table(name = "student")
 @Data
 @PrimaryKeyJoinColumn(name = "id_student")
-public class Student extends   AppUser {
+public class Student{
 
+    @Id
+    @UuidV7
+    @JdbcTypeCode(SqlTypes.UUID)
+    @Column(name = "id_student")
+    private String idStudent;
 
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;

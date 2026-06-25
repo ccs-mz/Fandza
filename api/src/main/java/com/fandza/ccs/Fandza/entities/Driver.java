@@ -19,7 +19,7 @@ import java.util.List;
 public class Driver extends AppUser {
 
 
-    protected Driver() {}
+    public Driver() {}
 
 
     public Driver(
@@ -57,6 +57,7 @@ public class Driver extends AppUser {
 
 
     @Column(name = "status_uploaded_at")
+    @CreationTimestamp
     private LocalDateTime statusUploadedAt;
 
     @Column(

@@ -2,11 +2,14 @@ package com.fandza.ccs.Fandza.dtos.driver;
 
 import com.fandza.ccs.Fandza.enums.UserType;
 
+import java.util.UUID;
+
 public record DriverResponseDTO(
-    String name,
-    String email,
-    String phoneNumber,
-    UserType userType,
-    DriverDetailsRequestDTO driverDetailsRequestDTO
+        UUID id,
+        String name,
+        String email,
+        String phoneNumber,
+        UserType userType,
+        DriverDetailsResponseDTO driverDetailsResponseDTO
 ) {
 }
