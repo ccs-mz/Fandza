@@ -19,11 +19,9 @@ import java.time.LocalDate;
 @Service
 public class DriverMapper {
 
-    private final DriverRepository repository;
     private final PasswordEncoder passwordEncoder;
 
     public DriverMapper(DriverRepository repository) {
-        this.repository = repository;
         this.passwordEncoder = new BCryptPasswordEncoder();
     }
 

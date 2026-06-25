@@ -8,6 +8,7 @@ import org.hibernate.type.SqlTypes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 @Entity
@@ -19,23 +20,25 @@ public class Vehicle {
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
     @Column(name = "id_vehicle",  nullable = false)
-    private String idVehicle;
+    private UUID idVehicle;
 
     @Column(
-            name = "vehicle_registration_number",
+            name = "vehicle_license_plate",
             nullable = false,
             unique = true
     )
-    private String vehicleRegistrationNumber;
+    private String vehicleLicensePlate;
 
-
-    @Column(
-            name = "manufacture_year"
-    )
-    private Integer manufactureYear;
+    @Column(nullable = false)
+    private String brand;
 
     @Column(nullable = false)
     private String model;
+
+
+
+    @Column(nullable = false)
+    private String  color;
 
     @Column(nullable = false)
     private Integer capacity;
