@@ -1,6 +1,5 @@
 package com.fandza.ccs.Fandza.mappers;
 
-import com.fandza.ccs.Fandza.dtos.document.DocumentRequestDTO;
 import com.fandza.ccs.Fandza.dtos.document.DocumentResponseDTO;
 import com.fandza.ccs.Fandza.entities.Document;
 import org.springframework.stereotype.Service;
