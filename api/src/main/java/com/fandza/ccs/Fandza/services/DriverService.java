@@ -2,6 +2,7 @@ package com.fandza.ccs.Fandza.services;
 
 import com.fandza.ccs.Fandza.dtos.driver.DriverRequestDTO;
 import com.fandza.ccs.Fandza.dtos.driver.DriverResponseDTO;
+import com.fandza.ccs.Fandza.dtos.driver.DriverUpdateRequestDTO;
 import com.fandza.ccs.Fandza.entities.Driver;
 import com.fandza.ccs.Fandza.exception.ResourceNotFoundException;
 import com.fandza.ccs.Fandza.mappers.DriverMapper;
@@ -53,6 +54,27 @@ public class DriverService {
         return driverMapper.toResponse(savedDriver);
     }
 
+    public DriverResponseDTO updateDriver(
+            UUID id,
+            DriverUpdateRequestDTO request
+    ){
+        var driver = driverRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("DRIVER_NOT_FOUND","Motorista não Encontrado"));
+
+        driver.setName(request.name());
+        driver.setPhoneNumber(request.phoneNumber());
+
+        Driver saved = driverRepository.save(driver);
+        return driverMapper.toResponse(saved);
+
+    }
+
+
+    public void deleteDriver(UUID id){
+        Driver driver = driverRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("DRIVER_NOT_FOUND","Motorista não Encontrado"));
+        driverRepository.delete(driver);
+    }
 
 
 
