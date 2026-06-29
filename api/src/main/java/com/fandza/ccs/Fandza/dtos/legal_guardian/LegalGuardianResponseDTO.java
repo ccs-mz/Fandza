@@ -1,6 +1,7 @@
 package com.fandza.ccs.Fandza.dtos.legal_guardian;
 
 import com.fandza.ccs.Fandza.dtos.legal_guardian.student.StudentSummaryDTO;
+import com.fandza.ccs.Fandza.entities.Student;
 import com.fandza.ccs.Fandza.enums.UserType;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public record LegalGuardianResponseDTO(
         String email,
         String phoneNumber,
         UserType userType,
-        List<StudentSummaryDTO> students
+        List<Student> students
 
 
 
