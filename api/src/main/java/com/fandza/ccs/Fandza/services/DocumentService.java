@@ -63,8 +63,7 @@ public class DocumentService {
         );
 
         Document saved = documentRepository.save(document);
+
         return documentMapper.toResponse(saved);
     }
-
-
 }
