@@ -69,7 +69,12 @@ public class LegalGuardianService {
         return legalGuardianMapper.toResponse(saved);
     }
 
+    public void deleteLegalGuardian(UUID id){
+        LegalGuardian guardian = legalGuardianRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("LEGAL_GUARDIAN_NOT_FOUND", "Encarregado não Encontrado"));
 
+        legalGuardianRepository.delete(guardian);
+    }
 
 
 

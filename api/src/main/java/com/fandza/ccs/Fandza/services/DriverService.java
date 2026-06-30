@@ -58,7 +58,7 @@ public class DriverService {
             UUID id,
             DriverUpdateRequestDTO request
     ){
-        var driver = driverRepository.findById(id)
+        Driver driver = driverRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("DRIVER_NOT_FOUND","Motorista não Encontrado"));
 
         driver.setName(request.name());
