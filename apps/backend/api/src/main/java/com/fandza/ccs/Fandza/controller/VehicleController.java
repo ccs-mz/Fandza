@@ -25,7 +25,6 @@ public class VehicleController {
         this.service = service;
     }
 
-
     @GetMapping
     public ResponseEntity<List<VehicleResponseDTO>> findAll(){
         return ResponseEntity.ok(service.findAllVehicles());
