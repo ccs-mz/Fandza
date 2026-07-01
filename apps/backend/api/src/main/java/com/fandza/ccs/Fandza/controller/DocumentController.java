@@ -35,7 +35,6 @@ public class DocumentController {
 
     }
 
-
     @PostMapping ResponseEntity<DocumentResponseDTO> uploadforVehicle(
             @PathVariable UUID id,
             @Valid @RequestBody VehicleDocumentRequestDTO request
