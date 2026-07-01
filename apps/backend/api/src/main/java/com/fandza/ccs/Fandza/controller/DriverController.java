@@ -30,7 +30,7 @@ public class DriverController {
         return ResponseEntity.ok(service.findAllDrivers());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<DriverResponseDTO> findById(
             @PathVariable UUID id
     ){
@@ -46,7 +46,7 @@ public class DriverController {
                 .body(service.createDriver(request));
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<DriverResponseDTO> updateDriver(
             @PathVariable UUID id,
             @Valid  @RequestBody DriverUpdateRequestDTO request
@@ -54,7 +54,7 @@ public class DriverController {
         return ResponseEntity.ok(service.updateDriver(id, request));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteDriver(
             @PathVariable UUID id
     ){
