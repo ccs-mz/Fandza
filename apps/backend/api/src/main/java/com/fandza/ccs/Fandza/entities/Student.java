@@ -12,7 +12,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "student")
 @Data
-@PrimaryKeyJoinColumn(name = "id_student")
 public class Student{
 
     @Id
@@ -20,6 +19,8 @@ public class Student{
     @JdbcTypeCode(SqlTypes.UUID)
     @Column(name = "id_student")
     private String idStudent;
+
+    private String name;
 
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
