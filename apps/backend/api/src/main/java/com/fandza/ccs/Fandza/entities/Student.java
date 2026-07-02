@@ -8,6 +8,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "student")
@@ -18,7 +19,7 @@ public class Student{
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
     @Column(name = "id_student")
-    private String idStudent;
+    private UUID idStudent;
 
     private String name;
 

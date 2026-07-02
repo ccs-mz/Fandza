@@ -3,6 +3,7 @@ package com.fandza.ccs.Fandza.entities;
 
 import com.fandza.ccs.Fandza.config.uuid.UuidV7;
 import jakarta.persistence.*;
+import lombok.Data;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 import org.springframework.aop.target.LazyInitTargetSource;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 
 @Entity
+@Data
 @Table(name = "school")
 public class School {
 
