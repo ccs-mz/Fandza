@@ -84,6 +84,13 @@ public class StudentService {
                 guardian
         );
 
+        if (school != null) {
+            student.setSchool(school);
+        }
+        if (address != null) {
+            student.setAddress(address);
+        }
+
         Student saved = studentRepository.save(student);
 
         return  studentMapper.toResponse(saved);
