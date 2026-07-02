@@ -17,10 +17,10 @@ public class StudentMapper {
                 student.getDateOfBirth(),
                 student.getGrade(),
                 student.getLegalGuardian().getIdUser(),
-                student.getSchool().getName(),
-                student.getAddress().getNeighborhood(),
-                student.getAddress().getBlock(),
-                student.getAddress().getHouseNumber()
+                student.getSchool() != null ? student.getName(): null,
+                student.getAddress() != null ? student.getAddress().getNeighborhood() : null,
+                student.getAddress() != null ? student.getAddress().getBlock(): null,
+                student.getAddress() != null ? student.getAddress().getHouseNumber() : null
         );
     }
 }

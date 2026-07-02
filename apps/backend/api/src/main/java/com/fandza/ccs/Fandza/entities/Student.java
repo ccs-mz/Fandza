@@ -15,6 +15,18 @@ import java.util.UUID;
 @Data
 public class Student{
 
+
+    public Student(
+            String name,
+            LocalDate dateOfBirth,
+            LegalGuardian legalGuardian
+
+    ){
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.legalGuardian = legalGuardian;
+    }
+
     @Id
     @UuidV7
     @JdbcTypeCode(SqlTypes.UUID)
