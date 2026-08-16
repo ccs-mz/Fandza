@@ -33,7 +33,6 @@ public class StudentController {
 
     }
 
-
     @GetMapping("/{guardianID}/student/{studentID}")
     public ResponseEntity<StudentResponseDTO> findById(
             @PathVariable UUID guardianID,

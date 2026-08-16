@@ -55,7 +55,6 @@ public class Driver extends AppUser {
     @Column(nullable = false)
     private DriverStatus status;
 
-
     @Column(name = "status_uploaded_at")
     @CreationTimestamp
     private LocalDateTime statusUploadedAt;
@@ -65,25 +64,17 @@ public class Driver extends AppUser {
     )
     private String statusReason;
 
-
     @Column(name = "average_rating")
     private Double averageRating;
-
 
     @Column(name = "total_assessments")
     private Integer totalAssessments = 0;
 
-
-
     @OneToOne(mappedBy = "driver", fetch = FetchType.LAZY)
     private Vehicle vehicle;
 
-
-
-
     @OneToMany(mappedBy = "driver")
     private List<Assessment> assessments = new ArrayList<>();
-
 
     @OneToMany(
             mappedBy = "driver",

@@ -17,6 +17,7 @@ import java.util.UUID;
 @Table(name = "address")
 public class Address {
 
+
     public Address() {}
     public Address(
             String neighborhood,
